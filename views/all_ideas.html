@@ -1,0 +1,17 @@
+{% for idea in ideas %}
+<div class="idea">
+  <img class="image" src="{{idea.image}}" alt="Imagem de {{idea.title}}">
+  <div class="content">
+    <h3>{{idea.title}}</h3>
+    <p>{{idea.category}}</p>
+    <div class="description">
+      {{idea.description}}
+    </div>
+    <a href="{{idea.link}}" target="_blank">Ir para a Ideia</a>
+  </div>
+  <form id="form-delete" method="POST" action="/?_method=DELETE">
+    <input type="hidden" name="id" value="{{ idea.id }}">
+    <button class="trash" type="submit"><img src="./trash-2.svg"></button>
+  </form>
+</div>
+{% endfor %}
